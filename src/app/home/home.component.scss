@@ -1,0 +1,55 @@
+.container-fluid{
+    width: auto;
+    background-color: #007a7d;
+    background-image: linear-gradient(to left,#103270,#007a7d);
+    
+
+    #monster-title{
+        margin-right: auto;
+        max-width: 155px;
+        margin-left: auto;
+        display: block;
+    }
+    #searchBox{
+        width: 35%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    app-card{
+        display: inline-block;
+        // padding: 0.375em;
+        margin-top: 0.5rem;
+    }
+    #scrollToTop {
+        position: fixed;
+        bottom: 1.2rem;
+        right: 1.2rem;
+        border-radius: 5px;
+        // color: #0eadb2d1;
+        color: seashell;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    app-card {
+        width: 50%;
+        // width: 49.99999%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    app-card {
+        width: 33.33%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    app-card {
+        width: 25%;
+    }
+}
+@media only screen and (min-width: 1190px) {
+    app-card {
+        width: 20%;
+    }
+}

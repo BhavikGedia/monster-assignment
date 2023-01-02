@@ -1,0 +1,19 @@
+<div class="alert alert-danger text-center" *ngIf="error">
+    <p><b>An Error Occurred! - </b> {{ error }} </p>
+    <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+</div>
+
+<div class="container-fluid">
+    <img id="monster-title" src="/assets/monster-title.jpg" alt="" >
+    <div id="searchBox">
+        <input placeholder="Search Monster" type="text" #search class="form-control">
+    </div>
+    <ng-container>
+        <app-card *ngFor="let user of users; let i = index"
+            [detail]="user" [id]="'monster' + i" (click)="onClick(user)">
+        </app-card>
+    </ng-container>
+    <div appScrollToTop id="scrollToTop">
+        <i class="fas fa-chevron-circle-up fa-3x"></i>
+    </div>
+</div>

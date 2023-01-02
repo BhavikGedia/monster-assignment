@@ -1,0 +1,29 @@
+
+.gallery{
+    border: 1px solid #ccc;
+    background-color: #95dada;
+    width: 14rem;
+    height: 16.5rem;
+    overflow: hidden;
+    margin: auto;
+    
+    &:hover {
+      border: 1px solid #777;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      padding: 0.5em 0.5em 0;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+    }
+    .desc {
+      padding: 0.025em;
+      text-align: center;
+    }
+}
+  
+  
+  
+  
