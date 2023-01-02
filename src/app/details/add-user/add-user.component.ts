@@ -1,18 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
 import { IUser } from 'src/app/home/user.model';
 
 @Component({
-  selector: 'app-userform',
-  templateUrl: './userform.component.html',
-  styleUrls: ['./userform.component.scss']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.scss']
 })
-export class UserformComponent implements OnInit {
+export class AddUserComponent implements OnInit {
   userForm!: FormGroup;
   @Input() userData!: IUser;
   @Input() isView!:boolean;
 
-  constructor() { }
+  constructor(private dataService:DataService, private router:Router) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -43,12 +45,18 @@ export class UserformComponent implements OnInit {
         city : new FormControl(null),
         zipcode : new FormControl(null),
       }),
-      phone : new FormControl(null, [Validators.required]),
+      phone : new FormControl(null, [Validators.required, Validators.pattern(/^\d{10}$/)]),
       website : new FormControl(null),
     });
   }
   onSubmit(){
-    console.log();
+    if(this.userForm.invalid) return
+    let user = {...this.userForm.value};
+    this.dataService.postData(user).subscribe(res => {
+    this.router.navigate(['home']);
+    },err => {
+      console.log(err);
+    })
     
   }
 }

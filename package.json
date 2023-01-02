@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node ./node_modules/@angular/cli/bin/ng serve",
+    "jsonServer": "json-server ./src/data/db.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

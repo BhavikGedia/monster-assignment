@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label" for="username">User name</label>
+            <input
+            type="text"
+            id="username"
+            name="username"
+            formControlName="username"
+            class="col-md-10 form-control">
+            <span *ngIf="!userForm.get('username')?.valid && userForm.get('username')?.touched" class="alert alert-danger ">
+                Username is required
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label" for="email">Email</label>
+            <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="col-md-10  form-control">
+            <span *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.touched" class="alert alert-danger ">
+                Email is required
+            </span>
+        </div>
+        <div class="form-group row" formGroupName="address">
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="col-md-4 col-form-label" for="city">City</label>
+                    <!-- <span class="col-md-2"></span> -->
+                    <input
+                    type="text"
+                    id="city"
+                    formControlName="city"
+                    class="col-md-8 form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="col-md-3 col-form-label" for="zipcode">Zipcode</label>
+                    <input
+                    type="text"
+                    id="zipcode"
+                    formControlName="zipcode"
+                    class="col-md-9 form-control">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label" for="phone">Phone</label>
+            <input
+            type="text"
+            id="phone"
+            formControlName="phone"
+            class="col-md-10 form-control">
+            <div *ngIf="!userForm.get('phone')?.valid && userForm.get('phone')?.touched"
+            class="alert alert-danger">
+                <span *ngIf="userForm.get('phone')?.errors?.required" >
+                    Phone number is required
+                </span>
+                <span *ngIf="userForm.get('phone')?.errors?.pattern" >
+                    Please, Enter 10 digit phone number.
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label" for="website">Website</label>
+            <input
+            type="text"
+            id="website"
+            formControlName="website"
+            class="col-md-10 form-control">
+        </div>
+        <button id="submit-btn" class="btn btn-info" type="submit" *ngIf="!isView">Submit</button>
+    </form>
+</div>

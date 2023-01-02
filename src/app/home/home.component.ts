@@ -1,11 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { fromEvent, Observable, of } from 'rxjs';
-import { debounceTime } from 'rxjs/internal/operators/debounceTime';
-import { distinctUntilChanged } from 'rxjs/internal/operators/distinctUntilChanged';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { map, startWith, tap } from 'rxjs/operators';
+import { fromEvent, Observable, of, Subscription } from 'rxjs';
+
+import { debounceTime, map, startWith, tap, distinctUntilChanged } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { DataService } from '../data.service';
 import { IUser } from './user.model';
@@ -39,6 +37,10 @@ export class HomeComponent implements OnInit {
   onClick(user: IUser){
     this.dataService.setUserData(user);
     this.router.navigate(['details', user.id]);
+  }
+
+  onAddUser(){
+    this.router.navigate(['details', 'add']);
   }
 
   getUserData(){

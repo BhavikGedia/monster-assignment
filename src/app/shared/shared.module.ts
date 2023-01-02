@@ -2,17 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { LowercasePipe } from './lowercase.pipe';
-import { UserformComponent } from './userform/userform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollToTopDirective } from './scroll-to-top.directive';
-
-
 
 @NgModule({
   declarations: [
     CardComponent,
     LowercasePipe,
-    UserformComponent,
     ScrollToTopDirective
   ],
   imports: [
@@ -21,7 +17,6 @@ import { ScrollToTopDirective } from './scroll-to-top.directive';
   ],
   exports: [
     CardComponent,
-    UserformComponent,
     ReactiveFormsModule,
     ScrollToTopDirective
   ]

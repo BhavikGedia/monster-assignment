@@ -38,4 +38,12 @@ export class DataService {
     return this.userData$.next(user);
   }
 
+  postData(data:IUser){
+    return this.http.post(environment.jsonPlaceholderUrl + '/users', data)
+    .pipe(
+      catchError(err => {
+        return throwError(err.message)
+      })
+    )
+  }
 }

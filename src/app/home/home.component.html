@@ -5,8 +5,10 @@
 
 <div class="container-fluid">
     <img id="monster-title" src="/assets/monster-title.jpg" alt="" >
-    <div id="searchBox">
-        <input placeholder="Search Monster" type="text" #search class="form-control">
+    <div  class="d-flex justify-content-center">
+        <input id="searchBox" placeholder="Search Monster" type="text" #search class="form-control">
+        <div id="addIcon" (click)="onAddUser()"><i class="fas fa-plus-circle fa-2x"></i></div>
+        <!-- <div id="addIcon"><i class="fas fa-plus fa-2x"></i></div> -->
     </div>
     <ng-container>
         <app-card *ngFor="let user of users; let i = index"

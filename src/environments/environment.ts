@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  jsonPlaceholderUrl: 'https://jsonplaceholder.typicode.com',
+  jsonPlaceholderUrl: 'http://localhost:3000',
   monsterProfileImgUrl: 'https://robohash.org/'
 };
 

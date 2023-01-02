@@ -16,9 +16,9 @@ export class DetailsComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.dataService.getUserData().subscribe(res => {
-      this.user = res;
-    })
+    // this.dataService.getUserData().subscribe(res => {
+    //   this.user = res;
+    // })
   }
   onClickBack(){
     this.router.navigate(['/home']);
