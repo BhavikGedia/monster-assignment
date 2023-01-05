@@ -51,7 +51,7 @@ export class AddUserComponent implements OnInit {
   }
   onSubmit(){
     if(this.userForm.invalid) return
-    let user = {...this.userForm.value};
+    let user = {...this.userForm.value, name: this.userForm.value.username };
     this.dataService.postData(user).subscribe(res => {
     this.router.navigate(['home']);
     },err => {
