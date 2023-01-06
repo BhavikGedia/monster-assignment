@@ -10,14 +10,7 @@ export class CardComponent implements OnInit {
   @Input() detail:any;
   constructor() { }
 
-  ngOnChanges(simpleChange:SimpleChange ){
-    // console.log(simpleChange);
-    
-  }
   ngOnInit(): void {
     this.img = this.detail['img'];
   }
-  ngAfterViewInit(){
-  }
-
 }

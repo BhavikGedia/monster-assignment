@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from '../data.service';
-import { IUser } from '../home/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -9,17 +7,10 @@ import { IUser } from '../home/user.model';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  user:any;
-
-  constructor(private route: ActivatedRoute, private router: Router, private dataService: DataService) {
-    
-  }
+  constructor(private router: Router) { }
   
-  ngOnInit(): void {
-    // this.dataService.getUserData().subscribe(res => {
-    //   this.user = res;
-    // })
-  }
+  ngOnInit(): void {}
+
   onClickBack(){
     this.router.navigate(['/home']);
   }

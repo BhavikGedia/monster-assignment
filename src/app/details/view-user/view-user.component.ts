@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
-import { IUser } from 'src/app/home/user.model';
-
 @Component({
   selector: 'app-view-user',
   templateUrl: './view-user.component.html',
