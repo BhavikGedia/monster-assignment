@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
       fromEvent(this.searchInput.nativeElement, 'keyup')
       .pipe(
         map((event:any) => (event.target as HTMLInputElement).value ),
-        debounceTime(1000),
+        debounceTime(700),
         distinctUntilChanged(),
         // tap(str => console.log(str)),
         map(str => str ? this.filterData(str) : this.tmpData.slice())

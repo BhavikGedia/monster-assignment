@@ -15,5 +15,8 @@ export class ViewUserComponent implements OnInit {
       this.user = res;
     })
   }
+  onImageClick(){
+    window.open(this.user.img)
+  }
 
 }

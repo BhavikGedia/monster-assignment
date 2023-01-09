@@ -74,7 +74,8 @@
         <button id="submit-btn" class="btn btn-info"
             type="submit"
             *ngIf="!isView"
-            [disabled]="userForm.invalid">
+            [disabled]="userForm.invalid"
+            [ngStyle]="{'cursor': userForm.invalid ? 'no-drop' : 'default'}">
             Submit
         </button>
     </form>
