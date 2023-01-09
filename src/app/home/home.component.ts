@@ -73,7 +73,12 @@ export class HomeComponent implements OnInit {
 
   filterData(searchStr:string): IUser[]{
     const filterValue = searchStr ? searchStr.toLowerCase() : '';
-    return this.tmpData.filter(d => (d.name && d.name.toLowerCase().indexOf(filterValue) > -1));
+    return this.tmpData.filter(d => {
+      if((d.name && d.name.toLowerCase().indexOf(filterValue) > -1) || 
+        (d.email && d.email.toLowerCase().indexOf(filterValue) > -1) ) 
+        return true;
+      return false;
+    })
   }
 
   ngOnDestroy(){
